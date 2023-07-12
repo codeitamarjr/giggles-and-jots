@@ -18,7 +18,7 @@ This project is a React implementation of an interface similar to Notion. The go
 1. Clone the repository:
 
 ```
-git clone https://github.com/
+git clone https://github.com/codeitamarjr/giggles-and-jots
 ```
 
 2. Change into the project directory:
