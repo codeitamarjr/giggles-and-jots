@@ -20,6 +20,7 @@ import {
 
 import "highlight.js/styles/atom-one-dark.css";
 import { BubbleButton } from "./BubbleButton";
+import { FloatingButton } from "./FloatingButton";
 
 lowlight.registerLanguage("html", html);
 
@@ -55,35 +56,23 @@ export function Editor() {
             return currentLineText === "/";
           }}
         >
-          <button className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-600 transition-colors">
-            <img
-              src="http://www.notion.so/images/blocks/text/en-US.png"
-              alt="Text"
-              className="w-12 border border-zinc-600 rounded"
-            />
-            <div className="flex flex-col text-left text-zinc-50">
-              <span className="text-sm">Text</span>
-              <span className="text-xs text-zinc-400">
-                Just start writing with plain text.
-              </span>
-            </div>
-          </button>
-          <button
-            className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-600 transition-colors"
-            onClick={() =>
+          <FloatingButton
+            command={(editor) => editor.chain().focus().setParagraph().run()}
+            image="http://www.notion.so/images/blocks/text/en-US.png"
+            title="Text"
+            description="Just start writing with plain text."
+            editor={editor}
+          />
+
+          <FloatingButton
+            command={(editor) =>
               editor.chain().focus().toggleHeading({ level: 1 }).run()
             }
-          >
-            <img
-              src="http://www.notion.so/images/blocks/header.57a7576a.png"
-              alt="Heading"
-              className="w-12 border border-zinc-600 rounded"
-            />
-            <div className="flex flex-col text-left text-zinc-50">
-              <span className="text-sm">Heading 1</span>
-              <span className="text-xs text-zinc-400">Big section heading</span>
-            </div>
-          </button>
+            image="http://www.notion.so/images/blocks/header.57a7576a.png"
+            title="Heading"
+            description="Heding 1"
+            editor={editor}
+          />
         </FloatingMenu>
       )}
       {editor && (
