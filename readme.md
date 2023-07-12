@@ -43,6 +43,10 @@ npm run dev
 
 This command runs the project in development mode. Open http://localhost:5000 to view it in the browser.
 
+## Screenshots
+
+![Main App](https://github.com/codeitamarjr/giggles-and-jots/blob/main/screenshots/screencapture-localhost-5173-2023-07-12-16_26_03.png?raw=true)
+
 ## Author
 
 Itamar Junior - July 2023
